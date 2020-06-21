@@ -16,7 +16,7 @@ function runTest (impls) {
       }\n`)
       return passed
     })
-    .filter(passed => !!passed)
+    .filter(passed => !passed)
     .length > 0 ? process.exit(1) : process.exit(0)
 }
 
