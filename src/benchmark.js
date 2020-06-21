@@ -1,6 +1,7 @@
 const { Suite } = require('benchmark')
 const { padColumn } = require('./strings')
 const { getLongestName } = require('./core')
+const { yellow } = require('kleur')
 const { cases } = require('../test-data.js')
 
 const formatNumber = data =>
@@ -12,7 +13,9 @@ function runBenchmark (impls) {
   const padName = padColumn(getLongestName(impls).length)
   const onCycle = ({ target }) => {
     const { hz, name } = target
-    process.stdout.write(`${padName(name)}${formatNumber(hz)} ops/sec\n`)
+    process.stdout.write(
+      `${padName(name)}${yellow(formatNumber(hz))} ops/sec\n`
+    )
   }
 
   const suite = new Suite()
