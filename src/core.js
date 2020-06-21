@@ -10,7 +10,7 @@ const getImplementaions = async (dir) =>
   )
 
 const getLongestName = impls =>
-  longest(impls.map(v => v[1]))
+  longest(impls.map(v => v[0]))
 
 module.exports = {
   getImplementaions,
