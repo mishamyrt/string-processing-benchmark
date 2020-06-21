@@ -1,4 +1,4 @@
-const { readdir } = require('fs/promises')
+const { readdir } = require('fs').promises
 const { parse, join } = require('path')
 const { longest } = require('./strings')
 
