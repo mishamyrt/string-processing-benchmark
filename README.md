@@ -11,4 +11,4 @@ This repository is created to compare the performance of different string proces
 |Declarative | 83,523.515|
 |Imperative | 641,172.516|
 
-More results can be seen in [actions page](./actions).
+More results can be seen in [actions page](https://github.com/mishamyrt/string-processing-benchmark/actions).
