@@ -1,7 +1,7 @@
 const { Suite } = require('benchmark')
 const { padColumn } = require('./strings')
 const { getLongestName } = require('./core')
-const { yellow } = require('kleur')
+const { yellow, grey } = require('kleur')
 const { cases } = require('../test-data.js')
 
 const formatNumber = data =>
@@ -18,6 +18,7 @@ function runBenchmark (impls) {
     )
   }
 
+  process.stdout.write(grey('Benchmark results:\n'))
   const suite = new Suite()
   impls
     .map(([name, fn]) => [name, () => fn(cases[0][0])])

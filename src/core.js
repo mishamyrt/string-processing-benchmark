@@ -12,7 +12,18 @@ const getImplementaions = async (dir) =>
 const getLongestName = impls =>
   longest(impls.map(v => v[0]))
 
+const debounce = (fn, timeout = 500) => {
+  let allowed = true
+  return (...args) => {
+    if (!allowed) return
+    allowed = false
+    setTimeout(() => { allowed = true }, timeout)
+    fn(...args)
+  }
+}
+
 module.exports = {
   getImplementaions,
-  getLongestName
+  getLongestName,
+  debounce
 }

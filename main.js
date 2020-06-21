@@ -1,12 +1,17 @@
 const { runTest } = require('./src/test')
 const { runBenchmark } = require('./src/benchmark')
+const { runWatch } = require('./src/watch')
 const { getImplementaions } = require('./src/core')
 
 const implsPath = 'implementations'
 
 const commands = {
   test: runTest,
-  benchmark: runBenchmark
+  benchmark: runBenchmark,
+  watch: () => runWatch(implsPath, () => {
+    getImplementaions(implsPath)
+      .then(impls => runTest(impls, false) && runBenchmark(impls))
+  })
 }
 
 function main () {

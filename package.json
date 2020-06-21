@@ -5,7 +5,8 @@
   "main": "benchmark.js",
   "scripts": {
     "start": "node main.js benchmark",
-    "test": "node main.js test"
+    "test": "node main.js test",
+    "watch": "node main.js watch"
   },
   "author": "Mikhael Khrustik <misha@myrt.co>",
   "license": "MIT",
